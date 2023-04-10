@@ -1,0 +1,1 @@
+java -Dconf=src/main/resources/opensea.conf -jar target/parallel-leverage-test-1.0-SNAPSHOT.jar dev collection WPUNKS -token_id 3
