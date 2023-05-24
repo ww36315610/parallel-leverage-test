@@ -1,4 +1,4 @@
-package com.parallel.leverage.object;
+package bitget.api.object;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
@@ -19,7 +19,7 @@ public abstract class AbstractActionHandler extends ConfigTools implements ApiOb
     private OkHttpClient client = new OkHttpClient();
 
     static {
-        apiKey = "e019f2b5e0df465fa00bb7ad645138af";
+        apiKey = "local";
         JSONMedia = MediaType.get("application/json; charset=utf-8");
     }
 
@@ -27,7 +27,7 @@ public abstract class AbstractActionHandler extends ConfigTools implements ApiOb
         Request request = new Request.Builder()
                 .url(url)
                 .addHeader("Accept", "application/json")
-                .addHeader("X-API-KEY", apiKey)
+                .addHeader("Upex-Service-Referer", apiKey)
                 .build();
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
@@ -37,8 +37,6 @@ public abstract class AbstractActionHandler extends ConfigTools implements ApiOb
     }
 
     public String postAPI(String url, String json) throws IOException {
-//        JSONObject jsonObject = new JSONObject();
-//        jsonObject.put("parameters", JSONObject.parse(json));
         JSONObject jsonObject = (JSONObject) JSONObject.parse(json);
         RequestBody body = RequestBody.create(JSONMedia, jsonObject.toString());
         Request request = new Request.Builder()
@@ -46,7 +44,7 @@ public abstract class AbstractActionHandler extends ConfigTools implements ApiOb
                 .post(body)
                 .addHeader("Accept", "application/json")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("X-API-KEY", apiKey)
+                .addHeader("Upex-Service-Referer", apiKey)
                 .build();
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();

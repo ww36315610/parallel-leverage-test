@@ -1,4 +1,4 @@
-package com.parallel.leverage.object;
+package bitget.api.object;
 
 
 import org.apache.commons.lang3.tuple.Pair;

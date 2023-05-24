@@ -1,0 +1,16 @@
+{
+  "featureCodeList": [
+    "offLine_CardBuyCoin_FAIL_30D_Count",
+    "offLine_CardBuyCoin_FAIL_30D_Sum",
+    "offLine_P2Pin_FAIL_30D_Count",
+    "offLine_P2Pin_FAIL_30D_Sum",
+    "offLine_P2Pout_FAIL_30D_Count",
+    "offLine_P2Pout_FAIL_30D_Sum",
+    "offLine_UserKyc_FAIL_30D_Count",
+    "offLine_UserKyc_FAIL_7D_Count"
+  ],
+  "featureParams": {
+    "bizId": "28a64bfa-9c6d-4a92-8ed7-777d2713333333",
+    "userId": "{{userId}}"
+  }
+}

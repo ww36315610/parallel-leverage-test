@@ -4,15 +4,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 import com.parallel.leverage.utils.TextTableUtils;
 import com.parallel.leverage.utils.UrlAppend;
-import javafx.util.Pair;
 import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
-public class BasicApiBak extends AbstractActionHandler{
+public class BasicApiBak extends AbstractActionHandler {
     private static final MediaType JSONMedia;
     private final static String apiKey;
     private OkHttpClient client = new OkHttpClient();
@@ -105,7 +105,7 @@ public class BasicApiBak extends AbstractActionHandler{
         String[] keys = keySting.toString().substring(0, keySting.lastIndexOf("#")).split("#");
         String[][] values = new String[3][];
         values[0] = valueSting.toString().substring(0, valueSting.lastIndexOf("#")).split("#");
-        return new Pair<>(keys, values);
+        return Pair.of(keys, values);
     }
 
     //todo: 处理response 扁平化json
@@ -131,7 +131,7 @@ public class BasicApiBak extends AbstractActionHandler{
                 i++;
             }
         }
-        return new Pair<>(keys, values);
+        return Pair.of(keys, values);
     }
 
     //输出 table格式

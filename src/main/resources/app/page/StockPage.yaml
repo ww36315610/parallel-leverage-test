@@ -1,0 +1,16 @@
+methods:
+  deleteAll:
+    steps:
+     - id: edit_group
+     - id: check_all
+     - id: cancel_follow
+     - id: md_buttonDefaultPositive
+     - id: action_close
+
+  addDefaultOptionalStock:
+    steps:
+     - id: add_to_portfolio_stock
+
+  toSearch:
+    steps:
+     - id: action_search

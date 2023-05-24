@@ -1,0 +1,15 @@
+methods:
+  #点击到首页Tab页面
+  toHomePage:
+    steps:
+      - xpath: //*[contains(@resource-id, 'tab_name') and @text='雪球']
+
+  #点击到自选Tab页面
+  toStock:
+    steps:
+      - xpath: //*[contains(@resource-id, 'tab_name') and @text='自选']
+
+  #点击到Search页面
+  toSearch:
+    steps:
+      - id: home_search
